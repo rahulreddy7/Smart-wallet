@@ -1,0 +1,238 @@
+:root {
+  color-scheme: light;
+  font-family: "Inter", system-ui, sans-serif;
+  background: #f5f7fb;
+  color: #0f172a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: center;
+  padding: 2.5rem 3.5rem;
+  background: linear-gradient(120deg, #1d4ed8, #0ea5e9);
+  color: #fff;
+}
+
+.brand {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.logo {
+  width: 56px;
+  height: 56px;
+  background: #fff;
+  color: #1d4ed8;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.sync {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: flex-start;
+  max-width: 280px;
+}
+
+.sync button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 999px;
+  background: #0f172a;
+  color: #fff;
+  cursor: pointer;
+}
+
+.hint {
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+main {
+  padding: 2rem 3.5rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.panel {
+  background: #fff;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+}
+
+.permissions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.permissions label {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: #f1f5f9;
+  border-radius: 12px;
+}
+
+.device {
+  margin-top: 1.5rem;
+  font-weight: 600;
+  display: flex;
+  gap: 0.6rem;
+}
+
+.default-wallet {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.default-wallet button {
+  width: fit-content;
+  padding: 0.6rem 1.1rem;
+  border: none;
+  border-radius: 999px;
+  background: #0f172a;
+  color: #fff;
+  cursor: pointer;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.field input,
+.field select,
+.field textarea {
+  padding: 0.65rem 0.8rem;
+  border-radius: 12px;
+  border: 1px solid #cbd5f5;
+  font: inherit;
+}
+
+.field textarea {
+  resize: vertical;
+}
+
+.field.inline {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+button[type="submit"],
+#copyDetails,
+#handoffButton {
+  width: 100%;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 12px;
+  background: #1d4ed8;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+#copyDetails:disabled,
+#handoffButton:disabled {
+  background: #cbd5f5;
+  cursor: not-allowed;
+}
+
+.actions {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.recommendation {
+  background: #f8fafc;
+  border-radius: 14px;
+  padding: 1.25rem;
+  min-height: 180px;
+}
+
+.autofill-preview {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  background: #eef2ff;
+}
+
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.card-tile {
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.card-tile strong {
+  font-size: 1.1rem;
+}
+
+.tag {
+  display: inline-flex;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background: #e0f2fe;
+  color: #0369a1;
+  font-size: 0.75rem;
+  width: fit-content;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: #475569;
+}
+
+@media (max-width: 720px) {
+  .hero,
+  main {
+    padding: 2rem 1.5rem;
+  }
+
+  .sync {
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Smart Wallet Optimizer</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="brand">
+      <span class="logo">SW</span>
+      <div>
+        <h1>Smart Wallet Optimizer</h1>
+        <p>Dynamic, AI-ready wallet orchestration across Apple, Google, and desktop.</p>
+      </div>
+    </div>
+    <div class="sync">
+      <span id="syncStatus">Wallet Sync: Not Connected</span>
+      <button id="syncButton">Sync Apple/Google Wallets</button>
+      <p class="hint">Supports OS default payment handoff and autofill APIs.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>Default Payment Permissions</h2>
+      <p>
+        Smart Wallet requests overwrite permission to become the default tap-to-pay provider so the best card is
+        chosen automatically in-store and online.
+      </p>
+      <div class="permissions">
+        <label><input type="checkbox" id="defaultPayment" /> Default tap-to-pay provider</label>
+        <label><input type="checkbox" id="locationAccess" checked /> Location & GPS for merchant detection</label>
+        <label><input type="checkbox" id="photoAccess" checked /> Camera/receipt parsing for offers</label>
+        <label><input type="checkbox" id="autofillAccess" checked /> Autofill & browser extension integration</label>
+      </div>
+      <div class="device">
+        <span>Detected platform:</span>
+        <strong id="platformLabel">Unknown</strong>
+      </div>
+      <div class="default-wallet">
+        <h3>Default Wallet Mode</h3>
+        <p>Enable Smart Wallet to become the OS default on mobile for tap-to-pay routing.</p>
+        <button id="defaultWalletButton">Enable as Default Wallet</button>
+        <span id="defaultWalletStatus">Status: Not enabled</span>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="panel">
+        <h2>Transaction Simulator</h2>
+        <form id="transactionForm">
+          <div class="field">
+            <label for="amount">Amount</label>
+            <input type="number" id="amount" min="1" value="42" required />
+          </div>
+          <div class="field">
+            <label for="category">Category</label>
+            <select id="category"></select>
+          </div>
+          <div class="field">
+            <label for="merchant">Merchant</label>
+            <input type="text" id="merchant" placeholder="Local Bistro" />
+          </div>
+          <div class="field">
+            <label for="merchantApp">Merchant App</label>
+            <select id="merchantApp"></select>
+          </div>
+          <div class="field">
+            <label for="location">Location</label>
+            <input type="text" id="location" value="San Francisco, CA" />
+          </div>
+          <div class="field inline">
+            <label><input type="checkbox" id="gpsUnavailable" /> GPS Unavailable</label>
+            <label><input type="checkbox" id="usingOtherApp" /> Paying in another app</label>
+          </div>
+          <button type="submit">Find Best Card</button>
+        </form>
+      </div>
+
+      <div class="panel">
+        <h2>Recommendation</h2>
+        <div id="recommendation" class="recommendation">
+          <p>Submit a transaction to see the optimal card.</p>
+        </div>
+        <div class="actions">
+          <button id="copyDetails" disabled>Copy Autofill Card Details</button>
+          <button id="handoffButton" disabled>Send to OS Wallet Handoff</button>
+        </div>
+        <div class="autofill-preview" id="autofillPreview">
+          <p>Autofill preview appears after a recommendation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Card Portfolio</h2>
+      <p>Data-driven portfolio with rewards, utilization, offers, and mandatory spend tracking.</p>
+      <div id="cardList" class="card-list"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Add a Card (Dynamic Portfolio)</h2>
+      <form id="cardForm" class="card-form">
+        <div class="field">
+          <label for="cardName">Card Name</label>
+          <input type="text" id="cardName" required />
+        </div>
+        <div class="field">
+          <label for="network">Network</label>
+          <input type="text" id="network" placeholder="Visa" required />
+        </div>
+        <div class="field">
+          <label for="baseRate">Base Rate (x)</label>
+          <input type="number" step="0.1" id="baseRate" value="1.5" required />
+        </div>
+        <div class="field">
+          <label for="utilization">Utilization (0-1)</label>
+          <input type="number" step="0.01" id="utilization" value="0.2" />
+        </div>
+        <div class="field">
+          <label for="limit">Credit Limit</label>
+          <input type="number" step="100" id="limit" value="5000" />
+        </div>
+        <div class="field">
+          <label for="statementDue">Statement Due (days)</label>
+          <input type="number" id="statementDue" value="10" />
+        </div>
+        <div class="field">
+          <label for="mandatoryTransactions">Mandatory Transactions Left</label>
+          <input type="number" id="mandatoryTransactions" value="0" />
+        </div>
+        <div class="field">
+          <label for="categoryRates">Category Rates (JSON)</label>
+          <textarea id="categoryRates" rows="3" placeholder='{"dining": 4, "travel": 3}'></textarea>
+        </div>
+        <div class="field">
+          <label for="offers">Offers (comma separated)</label>
+          <input type="text" id="offers" placeholder="5% grocery boost" />
+        </div>
+        <div class="field">
+          <label for="walletSupport">Supported Wallets</label>
+          <select id="walletSupport" multiple>
+            <option value="apple">Apple Wallet</option>
+            <option value="google">Google Wallet</option>
+          </select>
+        </div>
+        <div class="field inline">
+          <label><input type="checkbox" id="aprSensitive" /> APR sensitive</label>
+          <label><input type="checkbox" id="foreignTxFee" /> Foreign transaction fee</label>
+          <label><input type="checkbox" id="requiresTapToPay" /> Requires tap-to-pay</label>
+        </div>
+        <button type="submit">Add Card</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      Smart Wallet analyzes offers, utilization, and deadlines in real-time to pick the best card and provides
+      autofill suggestions across apps and browsers.
+    </p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "name": "Smart Wallet Optimizer",
+  "short_name": "SmartWallet",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1d4ed8",
+  "theme_color": "#1d4ed8",
+  "icons": []
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "amazon",
+    "name": "Amazon",
+    "category": "online",
+    "locationRequired": false
+  },
+  {
+    "id": "uber",
+    "name": "Uber",
+    "category": "travel",
+    "locationRequired": true
+  },
+  {
+    "id": "doordash",
+    "name": "DoorDash",
+    "category": "dining",
+    "locationRequired": true
+  },
+  {
+    "id": "target",
+    "name": "Target",
+    "category": "groceries",
+    "locationRequired": false
+  },
+  {
+    "id": "subway-turnstile",
+    "name": "Subway Turnstile",
+    "category": "transit",
+    "locationRequired": true
+  }
+]
