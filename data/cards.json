@@ -1,0 +1,88 @@
+[
+  {
+    "id": "aurora-platinum",
+    "name": "Aurora Platinum",
+    "network": "Visa",
+    "baseRate": 1.5,
+    "categoryRates": {
+      "dining": 4,
+      "travel": 3,
+      "groceries": 2,
+      "transit": 3
+    },
+    "offers": ["10% dining credit within 10 miles"],
+    "utilization": 0.28,
+    "limit": 12000,
+    "mandatoryTransactionsLeft": 1,
+    "statementDueInDays": 5,
+    "aprSensitive": false,
+    "foreignTxFee": false,
+    "supportedWallets": ["apple", "google"],
+    "requiresTapToPay": true,
+    "panLast4": "4821",
+    "expiry": "08/28"
+  },
+  {
+    "id": "nova-rewards",
+    "name": "Nova Rewards",
+    "network": "Mastercard",
+    "baseRate": 2,
+    "categoryRates": {
+      "gas": 4,
+      "groceries": 3,
+      "online": 3,
+      "transit": 2
+    },
+    "offers": ["5% online boost this week"],
+    "utilization": 0.46,
+    "limit": 8000,
+    "mandatoryTransactionsLeft": 0,
+    "statementDueInDays": 18,
+    "aprSensitive": true,
+    "foreignTxFee": true,
+    "supportedWallets": ["google"],
+    "requiresTapToPay": true,
+    "panLast4": "1379",
+    "expiry": "11/27"
+  },
+  {
+    "id": "zen-travel",
+    "name": "Zen Travel",
+    "network": "Amex",
+    "baseRate": 1,
+    "categoryRates": {
+      "travel": 5,
+      "dining": 3,
+      "transit": 4
+    },
+    "offers": ["Airport lounge access"],
+    "utilization": 0.19,
+    "limit": 15000,
+    "mandatoryTransactionsLeft": 2,
+    "statementDueInDays": 2,
+    "aprSensitive": false,
+    "foreignTxFee": false,
+    "supportedWallets": ["apple"],
+    "requiresTapToPay": true,
+    "panLast4": "9004",
+    "expiry": "04/29"
+  },
+  {
+    "id": "core-cashback",
+    "name": "Core Cashback",
+    "network": "Visa",
+    "baseRate": 1.8,
+    "categoryRates": {},
+    "offers": ["No foreign transaction fee"],
+    "utilization": 0.62,
+    "limit": 6000,
+    "mandatoryTransactionsLeft": 0,
+    "statementDueInDays": 12,
+    "aprSensitive": true,
+    "foreignTxFee": false,
+    "supportedWallets": ["apple", "google"],
+    "requiresTapToPay": false,
+    "panLast4": "5520",
+    "expiry": "09/26"
+  }
+]

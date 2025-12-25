@@ -1,0 +1,21 @@
+{
+  "mandatorySpend": {
+    "windowDays": 7,
+    "multiplier": 1.35
+  },
+  "utilizationPenalty": {
+    "threshold": 0.6,
+    "multiplier": 0.75
+  },
+  "aprSensitivePenalty": {
+    "threshold": 0.5,
+    "multiplier": 0.85
+  },
+  "gpsConfidence": {
+    "gpsUnavailableMultiplier": 0.85
+  },
+  "foreignTxFeePenalty": 0.9,
+  "walletSupportPenalty": 0.7,
+  "autofillBoost": 1.05,
+  "fallbackUtilizationThreshold": 0.7
+}

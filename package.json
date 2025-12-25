@@ -1,0 +1,11 @@
+{
+  "name": "smart-wallet",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Dynamic Smart Wallet optimizer with API-driven recommendations",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node src/server.js",
+    "test": "node tests/recommendation.test.js"
+  }
+}
